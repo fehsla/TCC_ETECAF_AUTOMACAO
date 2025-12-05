@@ -57,6 +57,12 @@ BLYNK_WRITE(V4) {
 BLYNK_WRITE(V5) {
   int pinValue = param.asInt();
   digitalWrite(25, pinValue);
+  digitalWrite(33, pinValue);
+}
+
+BLYNK_WRITE(V7) {
+  int pinValue = param.asInt();
+  digitalWrite(35, pinValue);
 }
 
 BLYNK_WRITE(V6) {  // Novo widget do Blynk para controlar o servo
@@ -69,6 +75,7 @@ BLYNK_WRITE(V6) {  // Novo widget do Blynk para controlar o servo
     meuServo.write(0);  // Mover o servo para 0 graus (posição inicial)
   }
 }
+
 
 void loop() {
   Blynk.run();
