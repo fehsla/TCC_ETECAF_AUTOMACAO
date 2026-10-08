@@ -4,12 +4,12 @@
 
 #include <WiFi.h>
 #include <BlynkSimpleEsp32.h>
-#include <ESP32Servo.h>  // Biblioteca correta para o ESP32
+#include <ESP32Servo.h> 
 
 char ssid[] = "TCC";
 char pass[] = "12345678";
 
-Servo meuServo;  // Cria o objeto para controlar o servo
+Servo meuServo;  
 
 void setup() {
   Serial.begin(115200);
@@ -25,7 +25,6 @@ void setup() {
   pinMode(27, OUTPUT);
   pinMode(25, OUTPUT);
   
-  // Inicializa o servo motor na porta GPIO 33 (você pode alterar se necessário)
   meuServo.attach(32);  // O servo será controlado pelo pino GPIO33
 }
 
@@ -68,7 +67,6 @@ BLYNK_WRITE(V7) {
 BLYNK_WRITE(V6) {  // Novo widget do Blynk para controlar o servo
   int pinValue = param.asInt();
   
-  // Se o valor enviado for 1, move o servo para 90 graus
   if(pinValue == 1) {
     meuServo.write(90);  // Mover o servo para 90 graus
   } else {
