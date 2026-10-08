@@ -25,7 +25,7 @@ void setup() {
   pinMode(27, OUTPUT);
   pinMode(25, OUTPUT);
   
-  meuServo.attach(32);  // O servo será controlado pelo pino GPIO33
+  meuServo.attach(32);  
 }
 
 BLYNK_WRITE(V0) {
